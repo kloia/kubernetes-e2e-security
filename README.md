@@ -28,7 +28,7 @@
 
 ## Motivation
 
-If you have a kubernetes cluster, you can't postpone security. Security is not something that you can do in a single command or single framework. There are many different layers/aspects of the security. For example you should think as application layer, container layer, orchestration tool layer and so on. In this repository, we are collecting all kinds of security advices/best practices that is related to kubernetes world.
+If you running your applications inside Kubernetes cluster, you should think about security in every step. Security is not something that you can do in a single command or single framework. There are many different layers/aspects of the security. For example you should think as application layer, container layer, orchestration tool layer and so on. In this repository, we are collecting all kinds of security advices/best practices and examples that are related to kubernetes world.
 
 If you want to contribute, please feel free to send a merge request or open an issue.
 
@@ -48,6 +48,7 @@ USER myuser
 #### Only use official images or custom build images
 
 If you are using non-official image then you don't know whether this image is replaced or not in any time. Especially in kubernetes, if you configured your image pull policy `Always` then kubernetes will download your image each time.
+So never use custom images that is built by 3rd person. Always build your images and push your private/public repository.
 
 
 #### Never put any credentials inside your image.
@@ -56,7 +57,7 @@ Always mount your secrets with using [Kubernetes Secret Manager](https://kuberne
 
 #### Security Scan for Docker images
 
-There are open source tools that checks Dockerfiles for potential security vulnerabilities. You can either integrate these tools to your CI cycle or use those tools manually.
+There are open source tools that checks Dockerfiles for potential security vulnerabilities. You can either integrate those tools to your CI cycle or use them manually.
 
 https://github.com/coreos/clair
 
