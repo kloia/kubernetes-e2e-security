@@ -152,6 +152,8 @@ can fetch metrics.
 If you are using kops/aws, you can disable it in security group.
 If you have a custom setup, you can disable it by network driver.
 
+Note: Kubernetes is planning to deprecate metrics endpoint in the future
+https://github.com/kubernetes/kubernetes/issues/68522
 
 #### Kubernetes API IP Restriction
 // TODO
