@@ -96,11 +96,31 @@ spec:
 ```
 
 #### Isolate Pods Using Taints
+Taints are added to `nodes` and Tolerations are added to `deployment` objects. (or pods)
+If toleration and taint have same keys are and same effects then they matches.
 
-// TODO
+```
+kubectl taint nodes node1 key=value:NoSchedule
+```
+
+```
+tolerations:
+- key: "key"
+  operator: "Equal"
+  value: "value"
+  effect: "NoSchedule"
+```
+
 
 #### Don't Run Containers as Privileged
-// TODO
+If you run your containers in privileged mode then those containers can directly
+access to system.
+
+```
+containers:
+  securityContext:
+    privileged: false
+```
 
 #### Drop Linux Capabilities
 // TODO
