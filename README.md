@@ -47,8 +47,16 @@ USER myuser
 
 #### Only use official images or custom build images
 
-If you are using non-official image then you don't know whether this image is replaced or not in any time. Especially in kubernetes, if you configured your image pull policy `Always` then kubernetes will download your image each time.
+If you are using non-official image then you don't know whether this image has been replaced or not in any time. Especially in kubernetes, if you configured your image pull policy `Always` then kubernetes will download your image each time.
 So never use custom images that is built by 3rd person. Always build your images and push your private/public repository.
+
+```
+spec:
+  containers:
+    - name: example
+      image: alpine
+      imagePullPolicy: Always
+```
 
 
 #### Never put any credentials inside your image.
@@ -88,6 +96,7 @@ spec:
 ```
 
 #### Isolate Pods Using Taints
+
 // TODO
 
 #### Don't Run Containers as Privileged
