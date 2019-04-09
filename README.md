@@ -38,7 +38,7 @@ If you want to contribute, please feel free to send a merge request or open an i
 
 You should always your docker containers with non-root user.
 If you run as `root` user then container might modify some files that shouldn't be modified.
-If attacker gains access then they will be root. For example they can install some applications inside container to listen network traffic.
+If attacker gains access then they will be root. For example they can install some applications inside container to listen network traffic. [example Dockerfile](https://github.com/kloia/kubernetes-e2e-security/blob/master/container/Dockerfile)
 
 ```
 RUN adduser -D myuser
