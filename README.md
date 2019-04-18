@@ -123,8 +123,14 @@ containers:
 ```
 
 #### Drop Linux Capabilities
-// TODO
+If you want to drop capabilities from container that you should use `RequiredDropCapabilities` field name.
 
+```
+spec:
+  RequiredDropCapabilities:
+    - CAP_NAME
+```
+Note: Capabilities listed in `RequiredDropCapabilities` must not be included in `AllowedCapabilities` or `DefaultAddCapabilities`.
 
 ## Kubelet Security Configurations
 
